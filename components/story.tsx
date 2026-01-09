@@ -42,10 +42,10 @@ export function Story() {
         </div>
 
         <div className="max-w-7xl mx-auto">
-          <div className="relative bg-white rounded-lg shadow-2xl overflow-hidden" style={{ minHeight: '600px' }}>
-            <div className="grid lg:grid-cols-2 h-full">
-              <div className="relative border-r-2 border-dashed border-muted p-12 lg:p-16 flex flex-col justify-between bg-gradient-to-br from-white to-muted/10">
-                <div className="absolute top-0 left-0 right-0 h-16 opacity-20">
+          <div className="relative bg-white rounded-lg shadow-2xl overflow-hidden">
+            <div className="grid lg:grid-cols-2">
+              <div className="relative lg:border-r-2 border-dashed border-muted p-6 sm:p-8 lg:p-16 flex flex-col justify-between bg-gradient-to-br from-white to-muted/10 min-h-[400px] lg:min-h-[600px]">
+                <div className="absolute top-0 left-0 right-0 h-16 opacity-20 hidden lg:block">
                   {[...Array(10)].map((_, i) => (
                     <div
                       key={i}
@@ -60,26 +60,26 @@ export function Story() {
                 </div>
 
                 <div>
-                  <div className="relative inline-block mb-8">
-                    <div className="absolute -top-4 -left-4 w-24 h-24 opacity-20">
+                  <div className="relative inline-block mb-6 lg:mb-8">
+                    <div className="absolute -top-4 -left-4 w-16 h-16 lg:w-24 lg:h-24 opacity-20 hidden sm:block">
                       <svg viewBox="0 0 100 100" className="w-full h-full text-secondary">
                         <path d="M20,50 Q30,20 50,50 T80,50" stroke="currentColor" strokeWidth="2" fill="none" />
                       </svg>
                     </div>
-                    <div className="relative bg-white px-6 py-3 rounded-full shadow-lg border-2 border-secondary transform rotate-2">
-                      <p className="text-primary font-semibold italic">{timeline[currentPage].date}</p>
+                    <div className="relative bg-white px-4 py-2 lg:px-6 lg:py-3 rounded-full shadow-lg border-2 border-secondary transform rotate-2">
+                      <p className="text-primary font-semibold italic text-sm lg:text-base">{timeline[currentPage].date}</p>
                     </div>
                   </div>
 
-                  <h3 className="text-4xl font-bold mb-6 leading-tight">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 leading-tight">
                     {timeline[currentPage].title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed text-lg mb-8">
+                  <p className="text-muted-foreground leading-relaxed text-base lg:text-lg mb-6 lg:mb-8 break-words">
                     {timeline[currentPage].description}
                   </p>
 
-                  <div className="mt-8">
-                    <svg className="w-20 h-12 text-secondary/30" viewBox="0 0 100 50">
+                  <div className="mt-4 lg:mt-8 hidden sm:block">
+                    <svg className="w-16 h-10 lg:w-20 lg:h-12 text-secondary/30" viewBox="0 0 100 50">
                       <path
                         d="M10,25 Q20,15 30,25 M40,25 Q50,15 60,25 M70,25 Q80,15 90,25"
                         stroke="currentColor"
@@ -91,8 +91,8 @@ export function Story() {
                 </div>
               </div>
 
-              <div className="relative p-12 lg:p-16 bg-gradient-to-bl from-white to-muted/10">
-                <div className="absolute top-0 left-0 right-0 h-16 opacity-20">
+              <div className="relative p-6 sm:p-8 lg:p-16 bg-gradient-to-bl from-white to-muted/10 min-h-[300px] lg:min-h-[600px]">
+                <div className="absolute top-0 left-0 right-0 h-16 opacity-20 hidden lg:block">
                   {[...Array(10)].map((_, i) => (
                     <div
                       key={i}
@@ -106,7 +106,7 @@ export function Story() {
                   ))}
                 </div>
 
-                <div className="relative h-full rounded-2xl overflow-hidden shadow-xl">
+                <div className="relative h-full min-h-[250px] rounded-2xl overflow-hidden shadow-xl">
                   <Image
                     src={timeline[currentPage].image}
                     alt={timeline[currentPage].title}
@@ -117,7 +117,7 @@ export function Story() {
               </div>
             </div>
 
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
+            <div className="relative bottom-0 py-6 lg:absolute lg:bottom-8 left-1/2 transform -translate-x-1/2 flex gap-3 z-20 justify-center">
               {timeline.map((_, index) => (
                 <button
                   key={index}
