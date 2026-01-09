@@ -22,27 +22,72 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: 'Emma Party - Organisation de Mariage de Luxe',
-  description: 'Wedding planner & scénographe - Élégance florale, ambiances sur mesure. L\'art de célébrer votre jour unique.',
+  title: 'Emma Party - L\'Art de Célébrer | Wedding Planner & Décoration Mariage',
+  description: 'Emma Party, wedding planner passionnée avec 15+ ans d\'expérience. Organisation complète de mariages, décoration florale sur mesure, coordination jour J. Transformez votre rêve en réalité avec élégance et créativité. Devis personnalisé gratuit.',
+  keywords: [
+    'wedding planner',
+    'organisatrice mariage',
+    'décoration mariage',
+    'art floral mariage',
+    'coordination mariage',
+    'Emma Party',
+    'mariage de luxe',
+    'scénographie mariage',
+    'organisation événement',
+    'décoration florale',
+    'wedding designer',
+    'planificateur mariage',
+    'mariage sur mesure',
+    'mariage élégant',
+    'mariage romantique',
+    'coordination jour J',
+    'prestataire mariage',
+    'organisateur événementiel',
+    'mariage clé en main',
+    'décoration événementielle',
+  ],
+  authors: [{ name: 'Emma Party' }],
+  creator: 'Emma Party',
+  publisher: 'Emma Party',
   icons: {
     icon: '/emma-party-white.png',
     shortcut: '/emma-party-white.png',
     apple: '/emma-party-white.png',
   },
   openGraph: {
+    title: 'Emma Party - L\'Art de Célébrer | Wedding Planner Professionnel',
+    description: 'Wedding planner avec 15+ ans d\'expérience. Organisation complète de mariages, décoration florale, coordination. Créez votre mariage de rêve.',
+    type: 'website',
+    locale: 'fr_FR',
+    siteName: 'Emma Party',
     images: [
       {
-        url: 'https://bolt.new/static/og_default.png',
+        url: '/heroimg.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Emma Party - Wedding Planner',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    images: [
-      {
-        url: 'https://bolt.new/static/og_default.png',
-      },
-    ],
+    title: 'Emma Party - L\'Art de Célébrer',
+    description: 'Wedding planner passionnée. Organisation de mariages élégants et personnalisés.',
+    images: ['/heroimg.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://emma-party.com',
   },
 };
 
