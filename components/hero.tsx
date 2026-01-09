@@ -133,6 +133,21 @@ export function Hero() {
           })}
         </div>
       </div>
+
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 lg:hidden flex gap-3 z-20">
+        {allImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => handleImageClick(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              currentBgIndex === index
+                ? 'bg-white w-8'
+                : 'bg-white/50 hover:bg-white/70'
+            }`}
+            aria-label={`Image ${index + 1}`}
+          />
+        ))}
+      </div>
     </section>
   );
 }

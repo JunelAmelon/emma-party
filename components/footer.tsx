@@ -1,5 +1,6 @@
 import { Instagram, Facebook, Mail, Phone, MapPin } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export function Footer() {
   return (
@@ -84,23 +85,47 @@ export function Footer() {
             <h4 className="text-lg font-semibold mb-4 text-white">Contact</h4>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
-                <Mail className="h-5 w-5 text-secondary mt-0.5" />
-                <span className="text-white/70">contact@emmaparty.fr</span>
+                <Mail className="h-5 w-5 text-secondary mt-0.5 flex-shrink-0" />
+                <span className="text-white/70 break-words">contact@emmaparty.fr</span>
               </li>
               <li className="flex items-start space-x-3">
-                <Phone className="h-5 w-5 text-secondary mt-0.5" />
+                <Phone className="h-5 w-5 text-secondary mt-0.5 flex-shrink-0" />
                 <span className="text-white/70">+33 6 12 34 56 78</span>
               </li>
               <li className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-secondary mt-0.5" />
+                <MapPin className="h-5 w-5 text-secondary mt-0.5 flex-shrink-0" />
                 <span className="text-white/70">Paris, France</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 text-center text-white/60">
-          <p>© 2024 Emma Party. Tous droits réservés.</p>
+        <div className="border-t border-white/10 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-white/60 text-sm md:text-base text-center md:text-left">
+              © 2026 Emma Party. Tous droits réservés.
+            </p>
+            <div className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6 text-sm">
+              <Link 
+                href="/mentions-legales" 
+                className="text-white/60 hover:text-white transition-colors"
+              >
+                Mentions légales
+              </Link>
+              <Link 
+                href="/conditions-generales" 
+                className="text-white/60 hover:text-white transition-colors"
+              >
+                Conditions générales
+              </Link>
+              <Link 
+                href="/politique-confidentialite" 
+                className="text-white/60 hover:text-white transition-colors"
+              >
+                Politique de confidentialité
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

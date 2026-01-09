@@ -51,18 +51,22 @@ export function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/95 backdrop-blur-sm shadow-md py-3'
+      className={`fixed top-0 left-0 right-0 transition-all duration-300 ${
+        isScrolled || isMobileMenuOpen
+          ? 'shadow-md py-3'
           : 'bg-transparent py-5'
       }`}
+      style={{ 
+        zIndex: isMobileMenuOpen ? 10000 : 50,
+        backgroundColor: isScrolled || isMobileMenuOpen ? '#ffffff' : 'transparent'
+      }}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between">
           <a href="#" className="flex items-center gap-3">
             <div className="relative h-12 w-12">
               <Image
-                src={isScrolled ? '/emma-party-black_.png' : '/emma-party-white.png'}
+                src={isScrolled || isMobileMenuOpen ? '/emma-party-black_.png' : '/emma-party-white.png'}
                 alt="Emma Party"
                 fill
                 className="object-contain"
@@ -70,7 +74,7 @@ export function Navigation() {
               />
             </div>
             <span className={`font-dancing text-3xl transition-colors ${
-                isScrolled ? 'text-foreground' : 'text-white'
+                isScrolled || isMobileMenuOpen ? 'text-foreground' : 'text-white'
               }`}>
               Emma Party
             </span>
@@ -83,7 +87,7 @@ export function Navigation() {
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
                 className={`font-medium transition-colors hover:text-primary ${
-                  isScrolled ? 'text-foreground' : 'text-white'
+                  isScrolled || isMobileMenuOpen ? 'text-foreground' : 'text-white'
                 }`}
               >
                 {link.name}
@@ -95,7 +99,7 @@ export function Navigation() {
                 scrollToSection(e as any, '#quote');
               }}
               className={`${
-                isScrolled
+                isScrolled || isMobileMenuOpen
                   ? 'bg-primary text-white hover:bg-primary/90'
                   : 'bg-white/20 text-white backdrop-blur-sm hover:bg-white/30'
               }`}
@@ -109,9 +113,9 @@ export function Navigation() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className={`h-6 w-6 ${isScrolled ? 'text-primary' : 'text-white'}`} />
+              <X className={`h-6 w-6 ${isScrolled || isMobileMenuOpen ? 'text-primary' : 'text-white'}`} />
             ) : (
-              <Menu className={`h-6 w-6 ${isScrolled ? 'text-primary' : 'text-white'}`} />
+              <Menu className={`h-6 w-6 ${isScrolled || isMobileMenuOpen ? 'text-primary' : 'text-white'}`} />
             )}
           </button>
         </div>
@@ -123,7 +127,10 @@ export function Navigation() {
               style={{ zIndex: 9998 }}
               onClick={() => setIsMobileMenuOpen(false)}
             />
-            <div className="lg:hidden fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl animate-in slide-in-from-right duration-500" style={{ zIndex: 9999 }}>
+            <div 
+              className="lg:hidden fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl animate-in slide-in-from-right duration-500" 
+              style={{ zIndex: 9999 }}
+            >
               <div className="p-6 h-full flex flex-col">
                 <div className="flex items-center justify-between mb-8">
                   <div className="flex items-center gap-3">
@@ -135,15 +142,15 @@ export function Navigation() {
                         className="object-contain"
                       />
                     </div>
-                    <span className="font-dancing text-2xl text-foreground">
+                    <span className="font-dancing text-2xl text-[#2d2520]">
                       Emma Party
                     </span>
                   </div>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="p-2 hover:bg-muted rounded-full transition-colors"
+                    className="p-2 hover:bg-gray-100 rounded-full transition-colors"
                   >
-                    <X className="h-6 w-6" />
+                    <X className="h-6 w-6 text-[#2d2520]" />
                   </button>
                 </div>
 
@@ -153,14 +160,14 @@ export function Navigation() {
                       key={link.name}
                       href={link.href}
                       onClick={(e) => scrollToSection(e, link.href)}
-                      className="block px-4 py-3 font-medium text-foreground hover:bg-muted rounded-lg transition-colors"
+                      className="block px-4 py-3 font-medium rounded-lg transition-colors hover:bg-gray-100 text-[#2d2520]"
                     >
                       {link.name}
                     </a>
                   ))}
                 </nav>
 
-                <div className="mt-auto pt-6 border-t">
+                <div className="mt-auto pt-6 border-t border-gray-200">
                   <Button
                     onClick={(e) => {
                       e.preventDefault();
