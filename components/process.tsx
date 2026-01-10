@@ -5,7 +5,7 @@ const steps = [
   {
     number: '1',
     title: 'Appel découverte',
-    description: '15 minutes pour comprendre vos envies, votre budget et votre vision du mariage parfait.',
+    description: '15 minutes pour comprendre vos envies, votre budget et votre vision de l\'événement parfait.',
     color: 'bg-secondary',
   },
   {

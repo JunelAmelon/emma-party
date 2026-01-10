@@ -82,7 +82,7 @@ export function QuoteForm() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="date" className="text-base">
-                    Date du mariage
+                    Date de l'événement
                   </Label>
                   <Input
                     id="date"

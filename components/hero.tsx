@@ -64,7 +64,7 @@ export function Hero() {
             L'art de célébrer
           </p>
           <p className="text-xl lg:text-2xl text-white/90 mb-10 leading-relaxed max-w-2xl">
-            Wedding planner & scénographe — Élégance florale, ambiances sur mesure
+            Organisation de mariages, anniversaires et événements d'exception — Créatrice d'émotions et d'instants magiques
           </p>
 
           <div className="flex items-center space-x-4 mb-12">

@@ -5,7 +5,7 @@ import { Heart, Award, Users, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 
 const stats = [
-  { icon: Heart, value: '20+', label: 'Mariages organisés' },
+  { icon: Heart, value: '20+', label: 'Événements organisés' },
   { icon: Award, value: '5+', label: 'Années d\'expérience' },
   { icon: Users, value: '20+', label: 'Couples heureux' },
   { icon: Sparkles, value: '100%', label: 'Satisfaction' },
@@ -54,10 +54,10 @@ export function About() {
               Créateurs de moments inoubliables
             </h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Depuis plus de 5 ans, Emma Party transforme les rêves de mariage en réalité. Notre passion pour l'excellence et notre attention aux moindres détails font de chaque célébration un moment unique et magique.
+              Depuis plus de 5 ans, Emma Party transforme vos rêves en réalité. Spécialisée dans l'organisation de mariages, anniversaires, événements d'entreprise et célébrations privées, notre passion pour l'excellence et notre attention aux moindres détails font de chaque moment une expérience unique et inoubliable.
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Spécialisés dans l'organisation complète de mariages de luxe, nous offrons une expertise incomparable en décoration florale, scénographie et coordination d'événements. Chaque mariage est une œuvre d'art personnalisée qui reflète votre histoire d'amour.
+              De la conception à la réalisation, nous créons des univers sur mesure qui vous ressemblent. Décoration florale raffinée, scénographie immersive, coordination impeccable — chaque événement devient une œuvre d'art vivante, pensée avec cœur et orchestrée avec précision pour sublimer vos plus beaux moments.
             </p>
 
             <div className="grid grid-cols-2 gap-6 mb-8">

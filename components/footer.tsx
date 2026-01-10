@@ -22,7 +22,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-white/80 mb-6">
-              Créons ensemble le mariage de vos rêves avec élégance et raffinement.
+              Créons ensemble le moment de vos rêves avec élégance et raffinement.
             </p>
             <div className="flex space-x-4">
               <a
