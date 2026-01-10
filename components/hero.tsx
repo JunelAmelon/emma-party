@@ -12,9 +12,9 @@ const allImages = [
 ];
 
 const avatarImages = [
-  'https://images.pexels.com/photos/1043473/pexels-photo-1043473.jpeg?auto=compress&cs=tinysrgb&w=150',
-  'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=150',
-  'https://images.pexels.com/photos/1721934/pexels-photo-1721934.jpeg?auto=compress&cs=tinysrgb&w=150',
+  'https://img.freepik.com/photos-gratuite/bel-homme-aux-bras-croises-fond-gris_23-2148113913.jpg?t=st=1768039631~exp=1768043231~hmac=b5385b0d7ddb363c17d3a30e8353beff9daadd07517a2e86345c8a2288b0f4fa',
+  'https://img.freepik.com/photos-gratuite/portrait-femme-ecoutant-musique-ecouteurs-exterieur_23-2150150735.jpg?t=st=1768039705~exp=1768043305~hmac=c526a3996951f4df35bdc42f7053753c1a563d11068a330309e5b829b10821fc',
+  'https://img.freepik.com/photos-gratuite/portrait-belle-femme-albino_23-2150520226.jpg?t=st=1768039806~exp=1768043406~hmac=73cc726524267db05457f6c5c2b9991b147b827edda78a5609f54a5ab0dd4a12',
 ];
 
 export function Hero() {
@@ -85,7 +85,7 @@ export function Hero() {
               ))}
             </div>
             <div className="text-white/90">
-              <p className="text-sm font-medium">3 couples</p>
+              <p className="text-sm font-medium">3 personnes</p>
               <p className="text-xs">consultent ce prestataire en ce moment</p>
             </div>
           </div>
