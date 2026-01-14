@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -23,10 +24,48 @@ export function QuoteForm() {
     budget: '',
     message: '',
   });
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setIsLoading(true);
+
+    try {
+      const templateParams = {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        date: formData.date,
+        city: formData.city,
+        guests: formData.guests,
+        budget: formData.budget,
+        message: formData.message,
+      };
+
+      const result = await emailjs.send(
+        'YOUR_SERVICE_ID',
+        'YOUR_TEMPLATE_ID',
+        templateParams,
+        'YOUR_PUBLIC_KEY'
+      );
+
+      console.log('Email sent successfully:', result.text);
+      alert('Votre demande de devis a été envoyée avec succès ! Nous vous répondrons dans les 24-48h.');
+      
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        date: '',
+        city: '',
+        guests: '',
+        budget: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Une erreur est survenue lors de l\'envoi de votre demande. Veuillez réessayer.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -181,8 +220,9 @@ export function QuoteForm() {
                 type="submit"
                 size="lg"
                 className="w-full bg-primary hover:bg-primary/90 text-white h-14 text-lg"
+                disabled={isLoading}
               >
-                Envoyer ma demande
+                {isLoading ? 'Envoi en cours...' : 'Envoyer ma demande'}
               </Button>
 
               <p className="text-center text-sm text-muted-foreground">
